@@ -1,8 +1,8 @@
 package org.example.orderservice.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.example.orderservice.entity.Order;
 import org.example.orderservice.service.OrderService;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -10,15 +10,14 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class OrderController {
 
-    private final OrderService
-            orderService;
+    private final OrderService service;
 
-    @GetMapping("/health-check")
-    public ResponseEntity<String>
-    healthCheck() {
+    @GetMapping("/{id}")
+    public Order getOrder(
+            @PathVariable Long id
+    ){
 
-        return ResponseEntity.ok(
-                orderService.healthCheck()
-        );
+        return service.getOrderById(id);
+
     }
 }

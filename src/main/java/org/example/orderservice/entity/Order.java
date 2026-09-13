@@ -2,7 +2,6 @@ package org.example.orderservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import java.math.BigDecimal;
 
 @Entity
 @Table(name = "orders")
@@ -23,8 +22,6 @@ public class Order {
     private String customerName;
 
 
-    private BigDecimal totalAmount;
+    private Double totalMoney;
 
-
-    private String status;
 }

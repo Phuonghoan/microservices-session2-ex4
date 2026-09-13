@@ -1,12 +1,14 @@
 package org.example.orderservice.exception;
 
-public class OrderNotFoundException
+public class ResourceNotFoundException
         extends RuntimeException {
 
-    public OrderNotFoundException(
+    public ResourceNotFoundException(
             String message
-    ) {
+    ){
 
         super(message);
+
     }
+
 }
